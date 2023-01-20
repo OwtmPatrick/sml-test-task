@@ -3,6 +3,11 @@
 .radio-btn {
     cursor: pointer;
 
+    &__input {
+        position: absolute;
+        left: -9999px;
+    }
+
     &__checkmark {
         position: relative;
         width: 20px;
@@ -35,23 +40,21 @@
         }
     }
 
-    &__input {
-        position: absolute;
-        left: -9999px;
+    &__input:not(:checked) + &__checkmark:after {
+        opacity: 0;
+        transform: scale(0);
+    }
 
-        // TODO refactor: replace tag selector wiht class selector
-        &:not(:checked) + div:after {
-            opacity: 0;
-            transform: scale(0);
-        }
-
-        &:checked + div:after {
-            opacity: 1;
-            transform: scale(1);
-        }
+    &__input:checked + &__checkmark::after {
+        opacity: 1;
+        transform: scale(1);
     }
 
     &__label {
         font-weight: 700;
+    }
+
+    &__suffix {
+        margin-left: 10px;
     }
 }
