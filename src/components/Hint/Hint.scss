@@ -1,0 +1,67 @@
+@import 'src/styles/colors.scss';
+
+.hint {
+    position: relative;
+    width: 25px;
+    height: 25px;
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 1px solid $black;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            transition: color 0.2s;
+            color: $purple;
+        }
+
+        &_close {
+            transition: opacity 0.2s;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__close-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__text {
+        display: none;
+        position: absolute;
+        top: 55px;
+        left: 12px;
+        min-width: 280px;
+        background-color: $purple;
+        color: $white;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 0;
+            width: 0px;
+            height: 0px;
+            border-left: 0 solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 25px solid $purple;
+        }
+
+        &_visible {
+            display: block;
+        }
+    }
+
+    &:hover &__text {
+        display: block;
+    }
+}

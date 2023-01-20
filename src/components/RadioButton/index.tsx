@@ -3,13 +3,14 @@ import React from 'react';
 import { Field } from 'redux-form/dist/redux-form';
 import RadioButton from './RadioButton';
 
-export type RadioButtonContainerProps = {
+export type RadioButtonProps = {
     name: string;
     label: string;
-    radioButtonValue: any;
+    radioButtonValue: string;
+    suffix?: React.ReactNode;
 };
 
-const Container: React.FC<RadioButtonContainerProps> = (props) => (
+const Container: React.FC<RadioButtonProps> = (props) => (
     <Field {...props} component={RadioButton} />
 );
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { WrappedFieldProps } from 'redux-form';
-import { RadioButtonContainerProps } from '.';
+import { RadioButtonProps } from '.';
 
 import './RadioButton.scss';
 
-const RadioButton: React.FC<WrappedFieldProps & RadioButtonContainerProps> = ({
+const RadioButton: React.FC<WrappedFieldProps & RadioButtonProps> = ({
     radioButtonValue,
     label,
+    suffix,
     ...field
 }) => (
     <label className="radio-btn d-flex align-items-center">
@@ -18,6 +19,7 @@ const RadioButton: React.FC<WrappedFieldProps & RadioButtonContainerProps> = ({
         />
         <div className="radio-btn__checkmark" />
         <span className="radio-btn__label">{label}</span>
+        <div className="radio-btn__suffix">{suffix}</div>
     </label>
 );
 

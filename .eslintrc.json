@@ -69,7 +69,8 @@
                     "some": ["nesting", "id"]
                 }
             }
-        ]
+        ],
+        "import/no-extraneous-dependencies": ["off"]
     },
     "overrides": [
         {
