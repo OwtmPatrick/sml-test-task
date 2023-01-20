@@ -1,0 +1,57 @@
+@import 'src/styles/colors.scss';
+
+.radio-btn {
+    cursor: pointer;
+
+    &__checkmark {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        color: $grey;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border: 1px solid $grey;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        &:after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: $black;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+    }
+
+    &__input {
+        position: absolute;
+        left: -9999px;
+
+        // TODO refactor: replace tag selector wiht class selector
+        &:not(:checked) + div:after {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        &:checked + div:after {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    &__label {
+        font-weight: 700;
+    }
+}
