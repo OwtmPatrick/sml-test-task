@@ -38,6 +38,7 @@
     &__text {
         display: none;
         position: absolute;
+        z-index: 10;
         top: 55px;
         left: 12px;
         min-width: 280px;
