@@ -10,17 +10,21 @@ const RadioButton: React.FC<WrappedFieldProps & RadioButtonProps> = ({
     suffix,
     ...field
 }) => (
-    <label className="radio-btn d-flex align-items-center">
-        <input
-            {...field.input}
-            type="radio"
-            value={radioButtonValue}
-            className="radio-btn__input"
-        />
-        <div className="radio-btn__checkmark" />
-        <span className="radio-btn__label">{label}</span>
+    <div className="radio-btn d-flex align-items-center">
+        <label className="radio-btn__label d-flex align-items-center">
+            <input
+                {...field.input}
+                type="radio"
+                value={radioButtonValue}
+                className="radio-btn__input"
+            />
+            <div className="radio-btn__checkmark" />
+
+            {label}
+        </label>
+
         <div className="radio-btn__suffix">{suffix}</div>
-    </label>
+    </div>
 );
 
 export default RadioButton;

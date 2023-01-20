@@ -1,8 +1,6 @@
 @import 'src/styles/colors.scss';
 
 .radio-btn {
-    cursor: pointer;
-
     &__input {
         position: absolute;
         left: -9999px;
@@ -52,6 +50,7 @@
 
     &__label {
         font-weight: 700;
+        cursor: pointer;
     }
 
     &__suffix {
