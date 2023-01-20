@@ -18,7 +18,7 @@ const Form: React.FC<InjectedFormProps<FormProps>> = ({
     <form onSubmit={handleSubmit}>
         <div>
             <label>First Name</label>
-            <div>
+            <div className="d-flex">
                 <Field name="firstName" component="input" type="text" placeholder="First Name" />
             </div>
         </div>
