@@ -1,0 +1,10 @@
+@import '../../styles/colors.scss';
+
+.text {
+    color: $light-grey;
+    transition: color 0.2s;
+
+    &_active {
+        color: $grey;
+    }
+}

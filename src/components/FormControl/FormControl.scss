@@ -1,3 +1,7 @@
 .salary-form-control {
-    gap: 10px;
+    // gap: 10px;
+
+    &__switch-wrapper {
+        margin-left: 30px;
+    }
 }
