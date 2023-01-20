@@ -1,0 +1,49 @@
+@import 'src/styles/colors.scss';
+
+.switch {
+    &__input {
+        position: absolute;
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    &__label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60px;
+        height: 30px;
+        background-color: $light-grey;
+        border-radius: 30px;
+        transition: background-color 0.2s;
+        cursor: pointer;
+
+        &_checked {
+            background-color: $orange;
+        }
+    }
+
+    &__label &__btn {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        transition: 0.2s;
+        background: $white;
+        box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+    }
+
+    &__input:checked + &__label &__btn {
+        left: calc(100% - 2px);
+        transform: translateX(-100%);
+    }
+
+    &__label:active &__btn {
+        width: 30px;
+    }
+}
