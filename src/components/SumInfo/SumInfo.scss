@@ -1,0 +1,25 @@
+@import '../../styles/colors.scss';
+
+.sum-info {
+    &__controls {
+        margin-left: 30px;
+    }
+
+    &__input-wrapper {
+        margin-top: 10px;
+        font-weight: 700;
+    }
+
+    &__input {
+        padding: 2px 10px;
+        border: 1px solid $light-grey;
+        border-radius: 20px;
+        font-weight: 700;
+    }
+
+    &__message {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: $beige;
+    }
+}
