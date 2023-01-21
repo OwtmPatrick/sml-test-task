@@ -4,6 +4,7 @@ import { InjectedFormProps } from 'redux-form';
 import { Field, reduxForm } from 'redux-form/dist/redux-form';
 import FormControl from '../components/FormControl';
 
+import { SalaryType } from '../types';
 import FORMS from '../constants/forms';
 
 type FormProps = {
@@ -37,5 +38,8 @@ const Form: React.FC<InjectedFormProps<FormProps>> = ({
 
 export default reduxForm({
     form: FORMS.SALARY_FORM,
+    initialValues: {
+        salary: SalaryType.MONTHY,
+    },
     onSubmit: (values: Partial<FormProps>) => console.log(values),
 })(Form);

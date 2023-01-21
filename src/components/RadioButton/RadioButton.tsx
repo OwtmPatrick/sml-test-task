@@ -17,6 +17,7 @@ const RadioButton: React.FC<WrappedFieldProps & RadioButtonProps> = ({
                 type="radio"
                 value={radioButtonValue}
                 className="radio-btn__input"
+                checked={field.input.value === radioButtonValue}
             />
             <div className="radio-btn__checkmark" />
 
