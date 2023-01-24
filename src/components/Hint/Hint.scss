@@ -1,4 +1,4 @@
-@import 'src/styles/all.scss';
+@import 'src/styles/all';
 
 .hint {
     position: relative;
@@ -51,13 +51,13 @@
         font-size: $typography-small;
         font-weight: $bold;
 
-        &:before {
+        &::before {
             content: '';
             position: absolute;
             top: -15px;
             left: 0;
-            width: 0px;
-            height: 0px;
+            width: 0;
+            height: 0;
             border-left: 0 solid transparent;
             border-right: 12px solid transparent;
             border-bottom: 15px solid $purple;

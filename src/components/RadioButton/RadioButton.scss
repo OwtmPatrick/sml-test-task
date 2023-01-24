@@ -1,4 +1,4 @@
-@import 'src/styles/all.scss';
+@import 'src/styles/all';
 
 .radio-btn {
     &__input {
@@ -13,7 +13,7 @@
         margin-right: 10px;
         color: $grey;
 
-        &:before {
+        &::before {
             content: '';
             position: absolute;
             left: 0;
@@ -25,7 +25,7 @@
             background: #fff;
         }
 
-        &:after {
+        &::after {
             content: '';
             width: 10px;
             height: 10px;
@@ -38,7 +38,7 @@
         }
     }
 
-    &__input:not(:checked) + &__checkmark:after {
+    &__input:not(:checked) + &__checkmark::after {
         opacity: 0;
         transform: scale(0);
     }

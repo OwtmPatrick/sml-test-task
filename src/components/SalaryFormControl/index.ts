@@ -7,6 +7,8 @@ import FORMS from '../../constants/forms';
 
 const selector = formValueSelector(FORMS.SALARY_FORM);
 
-const Container = connect((state) => ({ salaryTypeValue: selector(state, 'salary') }))(SalaryFormControl);
+const Container = connect((state) => ({ salaryTypeValue: selector(state, 'salary') }))(
+    SalaryFormControl
+);
 
 export default Container;

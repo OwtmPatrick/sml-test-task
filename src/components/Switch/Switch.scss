@@ -1,4 +1,4 @@
-@import 'src/styles/all.scss';
+@import 'src/styles/all';
 
 .switch {
     &__input {
@@ -35,15 +35,15 @@
         border-radius: 9px;
         transition: 0.2s;
         background: $white;
-        box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+        box-shadow: 0 0 2px 0 rgb(10 10 10 / 29%);
+    }
+
+    &__label:active &__btn {
+        width: 18px;
     }
 
     &__input:checked + &__label &__btn {
         left: calc(100% - 2px);
         transform: translateX(-100%);
-    }
-
-    &__label:active &__btn {
-        width: 18px;
     }
 }
