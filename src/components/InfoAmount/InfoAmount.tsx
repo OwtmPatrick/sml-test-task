@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import Switch from '../Switch';
 import Text from '../Text';
 import TAX from '../../constants/tax';
@@ -53,6 +53,18 @@ const InfoAmount: React.FC<{ salaryTypeValue?: SalaryType }> = ({ salaryTypeValu
         };
     }, [salaryTypeValue, sum, withTax]);
 
+    const renderHint = useCallback(() => {
+        if (salaryTypeValue === SalaryType.DAILY) {
+            return 'в день';
+        }
+
+        if (salaryTypeValue === SalaryType.HOURLY) {
+            return 'в час';
+        }
+
+        return null;
+    }, [salaryTypeValue]);
+
     return (
         <div className="info-amount mt-3">
             <div className="info-amount__controls">
@@ -69,7 +81,7 @@ const InfoAmount: React.FC<{ salaryTypeValue?: SalaryType }> = ({ salaryTypeValu
                         onChange={onSumChange}
                         onBlur={onSumBlur}
                     />
-                    ₽
+                    ₽ {renderHint()}
                 </div>
             </div>
 
