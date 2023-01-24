@@ -1,24 +1,28 @@
-@import 'src/styles/colors.scss';
+@import 'src/styles/all.scss';
 
 .hint {
     position: relative;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 
     &__btn {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
-        border: 1px solid $black;
+        border: 1px solid $grey;
+        font-size: 12px;
+        font-weight: $bold;
         background-color: transparent;
+        color: $grey;
         cursor: pointer;
+        transition: 0.2s;
 
         &:hover {
-            transition: color 0.2s;
             color: $purple;
+            border-color: $purple;
         }
 
         &_close {
@@ -31,30 +35,32 @@
     }
 
     &__close-icon {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
     }
 
     &__text {
         display: none;
         position: absolute;
         z-index: 10;
-        top: 55px;
-        left: 12px;
-        min-width: 280px;
+        top: 36px;
+        left: 10px;
+        min-width: 220px;
         background-color: $purple;
         color: $white;
+        font-size: $typography-small;
+        font-weight: $bold;
 
         &:before {
             content: '';
             position: absolute;
-            top: -25px;
+            top: -15px;
             left: 0;
             width: 0px;
             height: 0px;
             border-left: 0 solid transparent;
-            border-right: 25px solid transparent;
-            border-bottom: 25px solid $purple;
+            border-right: 12px solid transparent;
+            border-bottom: 15px solid $purple;
         }
 
         &_visible {

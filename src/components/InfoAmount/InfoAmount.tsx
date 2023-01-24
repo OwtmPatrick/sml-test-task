@@ -54,15 +54,15 @@ const InfoAmount: React.FC<{ salaryTypeValue?: SalaryType }> = ({ salaryTypeValu
     }, [salaryTypeValue, sum, withTax]);
 
     return (
-        <div className="info-amount">
+        <div className="info-amount mt-3">
             <div className="info-amount__controls">
-                <div className="d-flex gap-2 info-amount__switch-wrapper">
+                <div className="d-flex gap-2 align-items-end">
                     <Text text="Указать с НДФЛ" active={withTax} />
                     <Switch checked={!withTax} onChange={toggleWithTax} />
                     <Text text="Без НДФЛ" active={!withTax} />
                 </div>
 
-                <div className="info-amount__input-wrapper d-flex align-items-center gap-1">
+                <div className="info-amount__input-wrapper d-flex align-items-center gap-1 mt-4">
                     <input
                         className="info-amount__input"
                         value={sum}

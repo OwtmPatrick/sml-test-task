@@ -1,0 +1,12 @@
+@import '../../styles/all.scss';
+.salary-form-control {
+    &__title {
+        font-size: $typography-small;
+        color: $grey;
+        font-weight: $bold;
+    }
+
+    &__radio-buttons-wrapper {
+        margin-left: 16px;
+    }
+}

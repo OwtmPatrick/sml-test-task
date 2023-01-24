@@ -1,4 +1,4 @@
-@import 'src/styles/colors.scss';
+@import 'src/styles/all.scss';
 
 .switch {
     &__input {
@@ -13,8 +13,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 60px;
-        height: 30px;
+        width: 32px;
+        height: 20px;
         background-color: $light-grey;
         border-radius: 30px;
         transition: background-color 0.2s;
@@ -30,9 +30,9 @@
         position: absolute;
         top: 2px;
         left: 2px;
-        width: 26px;
-        height: 26px;
-        border-radius: 13px;
+        width: 16px;
+        height: 16px;
+        border-radius: 9px;
         transition: 0.2s;
         background: $white;
         box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
@@ -44,6 +44,6 @@
     }
 
     &__label:active &__btn {
-        width: 30px;
+        width: 18px;
     }
 }

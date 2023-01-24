@@ -1,4 +1,4 @@
-@import 'src/styles/colors.scss';
+@import 'src/styles/all.scss';
 
 .radio-btn {
     &__input {
@@ -8,8 +8,8 @@
 
     &__checkmark {
         position: relative;
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         margin-right: 10px;
         color: $grey;
 
@@ -18,8 +18,8 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             border: 1px solid $grey;
             border-radius: 50%;
             background: #fff;
@@ -27,12 +27,12 @@
 
         &:after {
             content: '';
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             background: $black;
             position: absolute;
-            top: 4px;
-            left: 4px;
+            top: 3px;
+            left: 3px;
             border-radius: 50%;
             transition: all 0.2s ease;
         }
@@ -49,7 +49,7 @@
     }
 
     &__label {
-        font-weight: 700;
+        font-weight: $bold;
         cursor: pointer;
     }
 

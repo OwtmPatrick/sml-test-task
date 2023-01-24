@@ -1,25 +1,35 @@
-@import '../../styles/colors.scss';
+@import '../../styles/all.scss';
 
 .info-amount {
     &__controls {
-        margin-left: 30px;
+        margin-left: 42px;
     }
 
     &__input-wrapper {
         margin-top: 10px;
-        font-weight: 700;
+        font-weight: $bold;
     }
 
     &__input {
+        max-width: 160px;
         padding: 2px 10px;
         border: 1px solid $light-grey;
         border-radius: 20px;
-        font-weight: 700;
+        font-weight: $bold;
     }
 
     &__message {
+        display: inline-block;
         margin-top: 20px;
-        padding: 20px;
+        padding: 24px 32px;
         background-color: $beige;
+    }
+
+    &__message-row {
+        margin-bottom: 8px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
