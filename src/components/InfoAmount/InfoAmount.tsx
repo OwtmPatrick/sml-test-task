@@ -5,9 +5,9 @@ import TAX from '../../constants/tax';
 
 import { SalaryType } from '../../types';
 
-import './SumInfo.scss';
+import './InfoAmount.scss';
 
-const SumInfo: React.FC<{ salaryTypeValue?: SalaryType }> = ({ salaryTypeValue }) => {
+const InfoAmount: React.FC<{ salaryTypeValue?: SalaryType }> = ({ salaryTypeValue }) => {
     const [withTax, setWithTax] = useState<boolean>(false);
     const [sum, setSum] = useState<string>('');
 
@@ -36,34 +36,35 @@ const SumInfo: React.FC<{ salaryTypeValue?: SalaryType }> = ({ salaryTypeValue }
 
         const value = parseFloat(sum);
         const tax = value * TAX;
+        const floatNumber = value <= 1 ? 2 : 0;
 
         if (withTax) {
             return {
-                salary: value - tax,
-                tax,
-                total: value,
+                salary: (value - tax).toFixed(floatNumber),
+                tax: tax.toFixed(floatNumber),
+                total: value.toFixed(floatNumber),
             };
         }
 
         return {
-            salary: value,
-            tax: value / (1 - TAX) - value,
-            total: value / (1 - TAX),
+            salary: value.toFixed(floatNumber),
+            tax: (value / (1 - TAX) - value).toFixed(floatNumber),
+            total: (value / (1 - TAX)).toFixed(floatNumber),
         };
     }, [salaryTypeValue, sum, withTax]);
 
     return (
-        <div className="sum-info">
-            <div className="sum-info__controls">
-                <div className="d-flex gap-2 sum-info__switch-wrapper">
+        <div className="info-amount">
+            <div className="info-amount__controls">
+                <div className="d-flex gap-2 info-amount__switch-wrapper">
                     <Text text="Указать с НДФЛ" active={withTax} />
                     <Switch checked={!withTax} onChange={toggleWithTax} />
                     <Text text="Без НДФЛ" active={!withTax} />
                 </div>
 
-                <div className="sum-info__input-wrapper d-flex align-items-center gap-1">
+                <div className="info-amount__input-wrapper d-flex align-items-center gap-1">
                     <input
-                        className="sum-info__input"
+                        className="info-amount__input"
                         value={sum}
                         onChange={onSumChange}
                         onBlur={onSumBlur}
@@ -73,14 +74,14 @@ const SumInfo: React.FC<{ salaryTypeValue?: SalaryType }> = ({ salaryTypeValue }
             </div>
 
             {!!sum && salaryTypeValue === SalaryType.MONTHY && (
-                <div role="status" className="sum-info__message">
-                    <p className="sum-info__message-row">
+                <div role="status" className="info-amount__message">
+                    <p className="info-amount__message-row">
                         <b>{val?.salary} ₽</b> сотрудник будет получать на руки
                     </p>
-                    <p className="sum-info__message-row">
+                    <p className="info-amount__message-row">
                         <b>{val?.tax} ₽</b> НДФЛ, 13% от оклада
                     </p>
-                    <p className="sum-info__message-row">
+                    <p className="info-amount__message-row">
                         <b>{val?.total} ₽</b> за сотрудника в месяц
                     </p>
                 </div>
@@ -89,4 +90,4 @@ const SumInfo: React.FC<{ salaryTypeValue?: SalaryType }> = ({ salaryTypeValue }
     );
 };
 
-export default SumInfo;
+export default InfoAmount;

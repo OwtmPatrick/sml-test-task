@@ -1,7 +1,7 @@
 import React from 'react';
 import RadioButton from '../RadioButton';
 import Hint from '../Hint';
-import Sum from '../SumInfo';
+import InfoAmount from '../InfoAmount';
 
 import { SalaryType } from '../../types';
 
@@ -19,7 +19,7 @@ const FormControl: React.FC<{ salaryTypeValue?: SalaryType }> = ({ salaryTypeVal
         <RadioButton name="salary" label="Оплата за день" radioButtonValue={SalaryType.DAILY} />
         <RadioButton name="salary" label="Оплата за час" radioButtonValue={SalaryType.HOURLY} />
 
-        <Sum salaryTypeValue={salaryTypeValue} />
+        <InfoAmount salaryTypeValue={salaryTypeValue} />
     </div>
 );
 
