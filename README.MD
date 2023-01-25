@@ -13,8 +13,16 @@ npm install
 
 3. Start dev server
 
+### Locally
+
 ```
-npm run dev
+npm run dev (Please make sure you have 16.x or later Node.js version)
+```
+
+### Running with docker
+
+```
+docker-compose up
 ```
 
 ## Build

@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+    reactapp:
+      build: ./
+      container_name: react-vite-app
+      ports:
+        - '3000:3000'
