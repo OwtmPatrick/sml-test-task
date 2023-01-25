@@ -15,8 +15,10 @@ npm install
 
 ### Locally
 
+Please make sure you have 16.x or later Node.js version
+
 ```
-npm run dev (Please make sure you have 16.x or later Node.js version)
+npm run dev
 ```
 
 ### Running with docker
